@@ -1,7 +1,7 @@
 package com.kite.joco.flowretro1.entity;
 
 /**
- * Created by Mester József on 2015.07.13..
+ * Created by Mester JÃ³zsef on 2015.07.13..
  */
 public class Uzletkoto {
 
