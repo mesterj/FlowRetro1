@@ -1,14 +1,33 @@
 package com.kite.joco.flowretro1.entity;
 
+import com.google.gson.annotations.Expose;
+import com.kite.joco.flowretro1.db.FlowDatabase;
+import com.raizlabs.android.dbflow.annotation.Column;
+import com.raizlabs.android.dbflow.annotation.PrimaryKey;
+import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
+
 /**
  * Created by Mester József on 2015.07.13..
  */
-public class Uzletkoto {
+@Table(databaseName = FlowDatabase.DATABASE_NAME)
+public class Uzletkoto extends BaseModel{
 
+    @Expose
+    @Column
+    @PrimaryKey(autoincrement = false)
     String szat;
+    @Expose
+    @Column
     String nev;
+    @Expose
+    @Column
     String email;
+    @Expose
+    @Column
     String alkozpont;
+    @Expose
+    @Column
     String alkrovidkod;
 
     public String getSzat() {

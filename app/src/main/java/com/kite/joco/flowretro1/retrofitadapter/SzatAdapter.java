@@ -1,7 +1,12 @@
 package com.kite.joco.flowretro1.retrofitadapter;
 
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import retrofit.RestAdapter;
+import retrofit.converter.GsonConverter;
+
 /**
  * Created by Mester József on 2015.07.17..
  */
@@ -18,7 +23,8 @@ public class SzatAdapter {
     }
 
     private static void setupSzatClient(){
-        RestAdapter restAdapter = new RestAdapter.Builder().setEndpoint(root).build();
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+        RestAdapter restAdapter = new RestAdapter.Builder().setEndpoint(root).setConverter(new GsonConverter(gson)).build();
         SZAT_CLIENT = restAdapter.create(SzatApi.class);
     }
 }
